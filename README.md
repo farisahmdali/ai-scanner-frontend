@@ -1,73 +1,127 @@
-# React + TypeScript + Vite
+# AI Resume Scanner - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A  React-based frontend application for scanning and analyzing resumes using AI technology.
 
-Currently, two official plugins are available:
+## 🚀 Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Core Framework
+- **React** (v19.2.0) - UI library for building user interfaces
+- **TypeScript** (v5.9.3) - Type-safe JavaScript for better code quality
+- **Vite** (v7.2.4) - Fast build tool and development server
 
-## React Compiler
+### UI Framework & Styling
+- **Ant Design** (v6.1.4) - Enterprise-class UI design language and React UI library
+- **Tailwind CSS** (v4.1.18) - Utility-first CSS framework
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Routing & Navigation
+- **React Router DOM** (v7.12.0) - Declarative routing for React applications
 
-## Expanding the ESLint configuration
+### HTTP Client
+- **Axios** (v1.13.2) - Promise-based HTTP client for making API requests
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Data Visualization
+- **Chart.js** (v4.4.0) - Simple yet flexible JavaScript charting library
+- **react-chartjs-2** (v5.3.1) - React wrapper for Chart.js
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Development Tools
+- **ESLint** (v9.39.1) - Code linting and quality checking
+- **TypeScript ESLint** (v8.46.4) - TypeScript-specific linting rules
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📦 Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🏃 Running the Application
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Development Mode
+```bash
+npm run dev
 ```
+Starts the development server (usually at `http://localhost:5173`)
+
+### Build for Production
+```bash
+npm run build
+```
+Creates an optimized production build in the `dist` directory
+
+### Preview Production Build
+```bash
+npm run preview
+```
+Preview the production build locally
+
+### Linting
+```bash
+npm run lint
+```
+Run ESLint to check code quality
+
+## 🔧 Environment Variables
+
+Create a `.env` file in the root of the frontend directory to configure environment-specific variables.
+
+### Available Environment Variables
+
+| Variable | Description | Default Value | Required |
+|----------|-------------|---------------|----------|
+| `VITE_API_BASE_URL` | Base URL for the backend API | `http://localhost:3000/api/v1` | No |
+
+### Example `.env` file
+
+```env
+# Backend API Base URL
+VITE_API_BASE_URL=http://localhost:3000/api/v1
+```
+
+### Production Example
+
+```env
+VITE_API_BASE_URL=https://api.yourdomain.com/api/v1
+```
+
+> **Note:** In Vite, environment variables must be prefixed with `VITE_` to be exposed to the client-side code. This is a security feature to prevent accidentally exposing sensitive server-side variables.
+
+## 📁 Project Structure
+
+```
+src/
+├── layout/          # Layout components (sidebar, header)
+├── pages/           # Page components
+│   ├── Login.tsx
+│   ├── Register.tsx
+│   ├── ResumeScanner.tsx
+│   ├── JobRoles.tsx
+│   ├── ScanHistory.tsx
+│   └── NotFound.tsx
+├── utils/           # Utility functions
+│   └── axios.ts     # Axios instance configuration
+├── App.tsx          # Main app component with routing
+└── main.tsx         # Application entry point
+```
+
+## 🔐 Authentication
+
+The application uses HTTP-only cookies for authentication. The Axios instance is configured with `withCredentials: true` to automatically send cookies with requests.
+
+## 📊 Features
+
+- User registration and login
+- Resume upload and AI-powered skill extraction
+- Job role management with required skills
+- Skill matching and comparison with visual charts
+- Scan history with pagination and search
+- Responsive design with Ant Design components
+
+## 🌐 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## 📝 License
+
+This project is part of the AI Resume Scanner application.
