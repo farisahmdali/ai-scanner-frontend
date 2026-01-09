@@ -102,10 +102,6 @@ src/
 └── main.tsx         # Application entry point
 ```
 
-## 🔐 Authentication
-
-The application uses HTTP-only cookies for authentication. The Axios instance is configured with `withCredentials: true` to automatically send cookies with requests.
-
 ## 📊 Features
 
 - User registration and login
@@ -114,14 +110,3 @@ The application uses HTTP-only cookies for authentication. The Axios instance is
 - Skill matching and comparison with visual charts
 - Scan history with pagination and search
 - Responsive design with Ant Design components
-
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 📝 License
-
-This project is part of the AI Resume Scanner application.
