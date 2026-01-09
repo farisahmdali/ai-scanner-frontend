@@ -21,7 +21,7 @@ function Login() {
       if(response.data.token){
         localStorage.setItem('token', response.data.token);
         message.success('Login successful!');
-        navigate('/');
+        navigate('/resumes');
       }else{
         message.error(response.data.message);
       }
