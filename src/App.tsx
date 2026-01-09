@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './pages/Register'
 import Login from './pages/Login'
-import Layout from './layout/layout';
+import Layout from './layout/Layout';
 import ResumeScanner from './pages/ResumeScanner';
 import JobRoles from './pages/JobRoles';
 import ScanHistory from './pages/ScanHistory';

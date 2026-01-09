@@ -3,7 +3,6 @@ import { Layout as AntLayout, Menu, Button, theme } from 'antd';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  HomeOutlined,
   LogoutOutlined,
   FileTextOutlined,
   TeamOutlined,
